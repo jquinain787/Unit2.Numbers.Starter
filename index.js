@@ -15,35 +15,72 @@ class Numbers{
   }
   count(){
     //return the count of numbers in data
-    let count = 0;
+    return this.data.length;
+  }
+  printNumbers(){
+    //print the numbers in data
+    console.log(this.data);
+  }
+  odds(){
+    //return the odd numbers in data
+    let count = [];
       for(let i = 0; i < this.data.length; i++){
-        if(this.data[i] === letter){
-          count++;
+        if(this.data[i] % 2 !== 0){
+          count[i] = this.data[i];
+        }
+      }
+      return count;
+    
+  }
+  evens(){
+    //return the even numbers in data
+    let count = [];
+      for(let i = 0; i < this.data.length; i++){
+        if(this.data[i] % 2 === 0){
+          count[i] = this.data[i];
         }
       }
       return count;
   }
-  printNumbers(){
-    //print the numbers in data
-  }
-  odds(){
-    //return the odd numbers in data
-  }
-  evens(){
-    //return the even numbers in data
-  }
   sum(){
     //return the sum of the numbers
+    let sum = 0;
+      for(let i = 0; i < this.data.length; i++){
+        sum += this.data[i];
+      }
+      return sum;
   }
   product(){
     //return the product of the numbers
+    let product = 1;
+      for(let i = 0; i < this.data.length; i++){
+        product *= this.data[i];
+      }
+      return product;
   }
   greaterThan(target){
     //return the numbers greater than the target
+    let greater_thans = [];
+    let g = 0;
+      for(let i = 0; i < this.data.length; i++){
+        if(this.data[i] > target){
+          greater_thans[g++] = this.data[i];
+        }
+      }
+      return greater_thans;
   }
+  
   howMany(target){
     //return the count of a given number
+    let num_count = 0;
+      for(let i = 0; i < this.data.length; i++){
+        if(this.data[i] === target){
+          num_count++;
+        }
+      }
+      return num_count;
   }
+  
 }
 
 //create an instance of numbers
